@@ -9,8 +9,6 @@ bot.on('ready', () =>{
     console.log('what the f');
 })
 
-bot.login(token);
-
 bot.on('message', msg=> {
     
     let args = msg.content.substring(PREFIX.length).split(" ");
@@ -22,5 +20,8 @@ bot.on('message', msg=> {
             break;
              
     }
-    
+})
+
+bot.login(token);
+
 
