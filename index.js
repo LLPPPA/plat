@@ -9,7 +9,12 @@ bot.on('ready', () =>{
     console.log('what the f');
 })
 
+bot.on('guildMemberAdd', member =>{
 
+    const channel = member.guild.channels.find(channel => channel.name === '新進成員');
+    if(!channel) return
+    channel.send(`歡迎加入惠惠教! ${member}`)
+});
 
 bot.on('message', message=> {
     
@@ -19,9 +24,7 @@ bot.on('message', message=> {
         case 'explosion':
             const attachment = new Attachment('https://i.ytimg.com/vi/O4tbOvKwZUw/maxresdefault.jpg')
             message.channel.send(message.author, attachment)
-        break;
-            
-       
+        break;      
     }
 })
 
