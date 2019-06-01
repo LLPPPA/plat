@@ -9,27 +9,20 @@ bot.on('ready', () =>{
     console.log('what the f');
 })
 
+
+
 bot.on('message', msg=> {
-
-bot.on('guildMemberAdd', member =>{
-    const channel = member.guild.channels.find(channel => channel.name === "新進成員");
-    if(!channel)return;
-
-    channel.send(`歡迎加入惠惠教! ${member}`)
-
-});
     
     let args = msg.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
-        case 'explosion':
-            const attachment = new Attachment('https://i.ytimg.com/vi/O4tbOvKwZUw/maxresdefault.jpg')
-            message.channel.send(message.author, attachment);
-            break;
-             
+        case 'ping':
+            message.channel.sendMessage('pong')
+        break;
+            
+       
     }
 })
 
 bot.login(token);
-
 
