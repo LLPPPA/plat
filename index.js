@@ -12,8 +12,11 @@ bot.on('ready', () =>{
 bot.on('guildMemberAdd', member =>{
 
     const channel = member.guild.channels.find(channel => channel.name === '新進成員');
-    if(!channel) return
+
+    if(!channel) return;
+
     channel.send(`歡迎加入惠惠教! ${member}`)
+
 });
 
 bot.on('message', message=> {
