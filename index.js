@@ -16,8 +16,9 @@ bot.on('message', message=> {
     let args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
-        case 'ping':
-            message.channel.sendMessage('pong')
+        case 'explosion':
+            const attachment = new Attachment('https://i.ytimg.com/vi/O4tbOvKwZUw/maxresdefault.jpg')
+            message.channel.send(message.author, attachment)
         break;
             
        
@@ -25,4 +26,5 @@ bot.on('message', message=> {
 })
 
 bot.login(token);
+
 
